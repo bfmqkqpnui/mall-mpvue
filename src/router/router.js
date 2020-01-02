@@ -4,7 +4,20 @@ module.exports = [
     name: 'home',
     config: {
       navigationBarTitleText: '首页',
-      // enablePullDownRefresh: true
+    }
+  },
+  {
+    path: 'pages/items/items',
+    name: 'items',
+    config: {
+      navigationBarTitleText: '分类',
+    }
+  },
+  {
+    path: 'pages/cart/cart',
+    name: 'cart',
+    config: {
+      navigationBarTitleText: '购物车',
     }
   },
   {
@@ -12,7 +25,6 @@ module.exports = [
     name: 'usercenter',
     config: {
       navigationBarTitleText: '我的',
-      // enablePullDownRefresh: true
     }
   },
   {
@@ -20,7 +32,6 @@ module.exports = [
     name: 'login',
     config: {
       navigationBarTitleText: '登录',
-      // enablePullDownRefresh: true
     }
   },
   {
@@ -28,7 +39,6 @@ module.exports = [
     name: 'imgFlipping',
     config: {
       navigationBarTitleText: '图片翻转',
-      // enablePullDownRefresh: true
     }
   },
 ]

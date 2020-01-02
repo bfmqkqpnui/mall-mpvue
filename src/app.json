@@ -13,19 +13,29 @@
   "navigateToMiniProgramAppIdList": [
   ],
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#333",
+    "color": "#333",
+    "selectedColor": "#d4237a",
     "borderStyle": "black",
     "backgroundColor": "#fff",
     "list": [{
       "text": "首页",
       "pagePath": "pages/home/home",
-      "iconPath": "./static/assets/home-unselected.png",
+      "iconPath": "./static/assets/home.png",
       "selectedIconPath": "./static/assets/home-selected.png"
+    },{
+      "text": "分类",
+      "pagePath": "pages/items/items",
+      "iconPath": "./static/assets/item.png",
+      "selectedIconPath": "./static/assets/item-selected.png"
+    },{
+      "text": "购物车",
+      "pagePath": "pages/cart/cart",
+      "iconPath": "./static/assets/cart.png",
+      "selectedIconPath": "./static/assets/cart-selected.png"
     }, {
       "text": "我的",
       "pagePath": "pages/usercenter/usercenter",
-      "iconPath": "./static/assets/mine-unselected.png",
+      "iconPath": "./static/assets/mine.png",
       "selectedIconPath": "./static/assets/mine-selected.png"
     }],
     "position": "bottom"

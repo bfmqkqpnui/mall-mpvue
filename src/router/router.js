@@ -41,4 +41,22 @@ module.exports = [
       navigationBarTitleText: '图片翻转',
     }
   },
+  {
+    path: 'packageB/orders/orderList',
+    name: 'orderList',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '我的订单',
+    }
+  },
+  {
+    path: 'packageB/orders/orderDetail',
+    name: 'orderDetail',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '订单详情',
+    }
+  },
 ]

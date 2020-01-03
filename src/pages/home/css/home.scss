@@ -3,3 +3,60 @@
 .home {
   font-size: 36rpx;
 }
+.swiper {
+  image {
+    width: 100%;
+    height: 500rpx;
+  }
+}
+
+.search {
+  height: 124rpx;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .input {
+    width: 80%;
+    height: 60rpx;
+    border-radius: 8rpx;
+    color: #ccc;
+    font-size: 26rpx;
+    padding: 2rpx 30rpx;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.iconList {
+  width: 100%;
+  max-height: 290rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30rpx 0;
+  .iterm {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24rpx;
+    padding-bottom: 30rpx;
+    img {
+      width: 86rpx;
+      height: 86rpx;
+      border-radius: 50%;
+    }
+    .content {
+      padding-top: 10rpx;
+    }
+  }
+}

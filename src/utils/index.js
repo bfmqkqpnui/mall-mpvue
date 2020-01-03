@@ -89,7 +89,8 @@ const base64src = base64data => {
 // 页面跳转
 const navigateTo = url => {
   if (url) {
-    if (url.indexOf("home/home") == -1 || url.indexOf("usercenter/usercenter") == -1) {
+    console.log("工具方法唤起，url为：", url)
+    if (url.indexOf("home/home") == -1 && url.indexOf("usercenter/usercenter") == -1 && url.indexOf("items/items") == -1 && url.indexOf("cart/cart") == -1) {
       wx.navigateTo({
         url: url
       })
@@ -117,8 +118,6 @@ const navigateBack = step => {
 }
 
 export default {
-  formatNumber,
-  formatTime,
   wxToast,
   isExist,
   getWechatUserInfo,

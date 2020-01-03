@@ -1,50 +1,77 @@
 <template>
   <div class="home">
-    首页
-    <timeLine :list="list" :backColor="backColor"></timeLine>
-    <!-- <mp-keyboard></mp-keyboard> -->
+    <!-- 搜索 -->
+    <div class="search">
+      <div class="input" @click.stop="toSearch">搜索热门商品</div>
+    </div>
+    <!-- 轮播 -->
+    <swiper :autoplay="bannerList && bannerList.length" :indicator-dots="true" :circular="true" indicator-color="#999" class="swiper" style="height: 500rpx" interval="2000">
+      <block v-if="bannerList && bannerList.length" v-for="(item, index) in bannerList" :key="index">
+        <swiper-item v-if="item.imgUrl">
+          <image :src="item.imgUrl" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- icon List -->
+    <div class="iconList">
+      <div class="iterm" v-for="(item, i) in iconList" :key="i">
+        <img :src="item.imgUrl" v-if="item.imgUrl">
+        <div class="content" v-text="item.content" v-if="item.content"></div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-import timeLine from '../../components/timeLine/timeLine'
-import keyboard from  '../../components/keyboard/keyboard'
-
+import api from '../../api/api'
+import utils from '../../utils'
   export default {
     name: 'home',
     data() {
       return {
-        list: [{
-          index: 1,
-          title: '2019-12-12 12:12:14',
-          value: '就立即离开教室的附近上空的飞机久科夫斯基的付款就'
-        },
-        {
-          index: 2,
-          title: '2019-12-13 12:12:14',
-          value: '就立即离开教室的附近上空的飞机久科夫斯基的付款就'
-        },{
-          index: 3,
-          title: '2019-12-14 12:12:14',
-          value: '就立即离开教室的附近上空的飞机久科夫斯基的付款就'
-        },{
-          index: 4,
-          title: '2019-12-15 12:12:14',
-          value: '就立即离开教室的附近上空的飞机久科夫斯基的付款就'
-        },{
-          index: 5,
-          title: '2019-12-22 12:12:14',
-          value: '就立即离开教室的附近上空的飞机久科夫斯基的付款就'
-        }],
-        backColor: ''
+        bannerList: "",
+        iconList: ""
       }
     },
     props: {},
-    onLoad(options) {},
-    onShow() {},
+    onShow() {
+      this.queryBannerList()
+      this.queryIconList()
+    },
+    methods: {
+      // 查询首页轮播图
+      queryBannerList() {
+        let params = {
+          aa: '1'
+        }
+        this.bannerList = []
+        api.queryBanners(params).then(res => {
+          console.log("查询首页轮播结果：", res)
+          if (res && res.resCode == '00100000') {
+            this.bannerList = res.obj.bannerList
+          }
+        })
+      },
+      // 查询首页icon列表
+      queryIconList() {
+        let params = {
+          bb: '11111'
+        }
+        this.iconList = []
+        api.queryIcons(params).then(res => {
+          console.log("查询首页icon列表结果：", res)
+          if (res && res.resCode == '00100000') {
+            this.iconList = res.obj.iconList
+          }
+        })
+      },
+      toSearch() {
+        console.log("分类")
+        utils.navigateTo("/pages/items/items")
+      }
+    },
     components: {
-      timeLine,
-      'mp-keyboard': keyboard
     }
   }
 </script>

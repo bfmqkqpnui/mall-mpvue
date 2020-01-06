@@ -24,7 +24,7 @@ module.exports = [
     path: 'pages/usercenter/usercenter',
     name: 'usercenter',
     config: {
-      navigationBarTitleText: '我的',
+      navigationBarTitleText: '个人中心',
     }
   },
   {

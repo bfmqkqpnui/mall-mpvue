@@ -25,6 +25,12 @@ const api = {
   queryGoodsListByCategoryId: r => request.post('/items/goodsList', r, {
     baseURL: baseUrlApi
   }),
+
+
+  // 查询购物车信息
+  queryCartInfo: r => request.post('/cart/list', r, {
+    baseURL: baseUrlApi
+  }),
 }
 
 export default api

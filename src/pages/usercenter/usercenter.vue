@@ -86,6 +86,31 @@
     <div class="entryList">
       <ul>
         <li @click="toWebView(15)">
+          <img class="tagImg" src="../../../static/assets/mine/wodeqianbao.png">
+          <p>我的钱包</p>
+          <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
+        </li>
+        <li @click="toWebView(15)">
+          <img class="tagImg" src="../../../static/assets/mine/wodeyouhuiquan.png">
+          <p>我的优惠券</p>
+          <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
+        </li>
+        <li @click="toWebView(15)">
+          <img class="tagImg" src="../../../static/assets/mine/choujiang.png">
+          <p>我的抽奖</p>
+          <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
+        </li>
+        <li @click="toWebView(15)">
+          <img class="tagImg" src="../../../static/assets/mine/wodejifen.png">
+          <p>我的积分</p>
+          <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
+        </li>
+        <li @click="toWebView(15)">
+          <img class="tagImg" src="../../../static/assets/mine/support.png">
+          <p>我的收藏</p>
+          <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
+        </li>
+        <li @click="toWebView(15)">
           <img class="tagImg" src="../../../static/assets/mine/mc-address.png">
           <p>地址管理</p>
           <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
@@ -100,7 +125,7 @@
         <li @click="toWebView(12)">
           <img class="tagImg" src="../../../static/assets/mine/mc-service.png">
           <p>联系客服</p>
-          <span>400-900-8800</span>
+          <span>400-888-8888</span>
           <img class="arrImg" src="../../../static/assets/mine/mc-arr.png">
         </li>
       </ul>

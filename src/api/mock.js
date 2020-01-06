@@ -43,7 +43,7 @@ const iconList = params => {
   for (let i = 0; i < num; i++) {
     let obj = {
       index: i + 1,
-      imgUrl: Random.image('375x250', Random.color(), '', 'png', ''),
+      imgUrl: Random.image('375x250', Random.color(), '', 'png', Random.cword(1)),
       link: Random.url('http'),
       content: Random.cword(2, 4)
     }
@@ -65,7 +65,7 @@ const iconList = params => {
   }
   return object
 }
-
+// 分类菜单列表
 const categories = (params) => {
   let num = Random.integer(10, 25)
   let list = []
@@ -93,7 +93,7 @@ const categories = (params) => {
   }
   return object
 }
-
+// 分类商品列表
 const goodListByCategory = (parentId) => {
   let round1 = Random.integer(2, 10)
   let list = []
@@ -136,6 +136,35 @@ const goodListByCategory = (parentId) => {
   return object
 }
 
+// 查询购物车信息
+const carts = (params) => {
+  let num = Random.integer(0, 25)
+  let list = []
+  for (let i = 0; i < num; i++) {
+    let obj = {
+      index: i + 1,
+      categorySid: Random.integer(100000, 999999),
+      categoryName: Random.cword(2, 4)
+    }
+    list.push(obj)
+  }
+  let object = {}
+  if (list && list.length) {
+    object = {
+      resCode: "00100000",
+      obj: list,
+      msg: ""
+    }
+  } else {
+    object = {
+      resCode: "00100005",
+      obj: "",
+      msg: "网络异常,请稍后再试"
+    }
+  }
+  return object
+}
+
 // mock拦截
 Mock.mock('/mock/home/banners', "POST", banners) // 轮播图
 Mock.mock('/mock/home/iconList', "POST", iconList) // icon列表
@@ -143,3 +172,6 @@ Mock.mock('/mock/home/iconList', "POST", iconList) // icon列表
 // 分类
 Mock.mock('/mock/items/menus', "POST", categories) // 菜单列表
 Mock.mock('/mock/items/goodsList', "POST", goodListByCategory) // 商品列表
+
+// 购物车
+Mock.mock('/mock/cart/list', "POST", carts) // 查询购物车信息

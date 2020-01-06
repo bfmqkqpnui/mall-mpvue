@@ -100,7 +100,7 @@ const navigateTo = url => {
       })
     }
   } else {
-    Toast("没有页面地址")
+    wxToast("没有页面地址")
   }
 }
 

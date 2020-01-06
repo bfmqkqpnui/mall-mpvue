@@ -26,6 +26,7 @@
 <script>
 import api from '../../api/api'
 import utils from '../../utils'
+import constant from '../../constant/config'
   export default {
     name: 'home',
     data() {
@@ -43,13 +44,13 @@ import utils from '../../utils'
       // 查询首页轮播图
       queryBannerList() {
         let params = {
-          aa: '1'
+          resourceId: '99999888888'
         }
         this.bannerList = []
         api.queryBanners(params).then(res => {
           console.log("查询首页轮播结果：", res)
           if (res && res.resCode == '00100000') {
-            this.bannerList = res.obj.bannerList
+            this.bannerList = res.obj
           }
         })
       },
@@ -62,7 +63,7 @@ import utils from '../../utils'
         api.queryIcons(params).then(res => {
           console.log("查询首页icon列表结果：", res)
           if (res && res.resCode == '00100000') {
-            this.iconList = res.obj.iconList
+            this.iconList = res.obj
           }
         })
       },

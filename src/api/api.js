@@ -31,6 +31,12 @@ const api = {
   queryCartInfo: r => request.post('/cart/list', r, {
     baseURL: baseUrlApi
   }),
+
+
+  // 查询订单列表
+  queryOrderList: r => request.post('/order/queryOrdersByStatus', r, {
+    baseURL: baseUrlApi
+  }),
 }
 
 export default api

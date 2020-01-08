@@ -165,6 +165,66 @@ const carts = (params) => {
   return object
 }
 
+// 查询订单列表
+const orderList = (params) => {
+  let num = Random.integer(0, 25)
+  let list = []
+  for (let i = 0; i < num; i++) {
+    let obj = {
+      index: i + 1,
+      orderId: Random.integer(1000000000, 9999999999),
+      orderStatus: Random.integer(1001, 1005),
+      totalCount: Random.integer(1, 99),
+      totalAmount: Random.float(1, 999999, 2, 2),
+    }
+    let goodsList = []
+    let goodsNum = Random.integer(1, 10)
+    for (let j = 0; j < goodsNum; j++) {
+      let good = {
+        goodsId: Random.integer(1000000, 9999999999),
+        goodsSaleName: Random.cword(10, 50),
+        goodsSpecs: Random.cword(8, 20),
+        goodsImg: Random.image('150x150', Random.color()),
+        goodsPrice: Random.float(100, 999999, 2, 2),
+        buyNumber: Random.integer(1, 99)
+      }
+      let promitionNum = Random.integer(0, 3)
+      let goodsPromitionList = []
+      for (let k = 0; k < promitionNum; k++) {
+        let pro = {
+          promitionId: Random.integer(1000, 9999),
+          promitionType: Random.word(2, 8),
+          promitionName: Random.cword(2, 6)
+        }
+        goodsPromitionList.push(pro)
+      }
+      if (goodsPromitionList && goodsPromitionList.length) {
+        good.goodsPromitions = goodsPromitionList
+      }
+      goodsList.push(good)
+    }
+    if (goodsList && goodsList.length) {
+      obj.goodsList = goodsList
+    }
+    list.push(obj)
+  }
+  let object = {}
+  if (list && list.length) {
+    object = {
+      resCode: "00100000",
+      obj: list,
+      msg: ""
+    }
+  } else {
+    object = {
+      resCode: "00100005",
+      obj: "",
+      msg: "网络异常,请稍后再试"
+    }
+  }
+  return object
+}
+
 // mock拦截
 Mock.mock('/mock/home/banners', "POST", banners) // 轮播图
 Mock.mock('/mock/home/iconList', "POST", iconList) // icon列表
@@ -175,3 +235,6 @@ Mock.mock('/mock/items/goodsList', "POST", goodListByCategory) // 商品列表
 
 // 购物车
 Mock.mock('/mock/cart/list', "POST", carts) // 查询购物车信息
+
+// 订单
+Mock.mock('/mock/order/queryOrdersByStatus', 'POST', orderList)

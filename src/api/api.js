@@ -37,6 +37,12 @@ const api = {
   queryOrderList: r => request.post('/order/queryOrdersByStatus', r, {
     baseURL: baseUrlApi
   }),
+
+
+  // 查询用户所有收货地址
+  queryAddressList: r => request.post('/address/queryAddressList', r, {
+    baseURL: baseUrlApi
+  }),
 }
 
 export default api

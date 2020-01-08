@@ -16,6 +16,11 @@ const Loading = (flag = false) => {
   })
 }
 
+// 隐藏loading
+const hideLoading = (flag = false) => {
+  wx.hideLoading()
+}
+
 // 判断当前值是否存在
 const isExist = opt => {
   let flag = false
@@ -117,6 +122,11 @@ const navigateBack = step => {
   }
 }
 
+// 是否包含特殊字符
+const isContainsSpecialTxt = (txt) => {
+  return /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/.test(txt)
+}
+
 export default {
   wxToast,
   isExist,
@@ -125,8 +135,10 @@ export default {
   getTimeFormatToday,
   GetQueryString,
   Loading,
+  hideLoading,
   base64src,
   navigateTo,
-  navigateBack
+  navigateBack,
+  isContainsSpecialTxt
 }
 

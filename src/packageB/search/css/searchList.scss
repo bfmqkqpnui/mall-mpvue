@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.more-column {
+  ul {
+    margin: rem(8);
+    overflow: hidden;
+    li {
+      background: #f8f8f8;
+      width: 50%;
+      float: left;
+      .tb-cont {
+        height: rem(678);
+        margin: rem(8);
+        padding: rem(10);
+        border-radius: rem(16);
+        background: #fff;
+        overflow: hidden;
+        color: #333333;
+        .top-cont {
+          .top-pic {
+            width: 100%;
+            height: rem(380);
+            border-radius: rem(8);
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }		
+}

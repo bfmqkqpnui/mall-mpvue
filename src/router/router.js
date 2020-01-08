@@ -59,4 +59,40 @@ module.exports = [
       navigationBarTitleText: '订单详情',
     }
   },
+  {
+    path: 'packageB/address/addresslist',
+    name: 'addresslist',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '地址列表管理',
+    }
+  },
+  {
+    path: 'packageB/address/address',
+    name: 'address',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '地址详情',
+    }
+  },
+  {
+    path: 'packageB/search/search',
+    name: 'search',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '搜索',
+    }
+  },
+  {
+    path: 'packageB/search/searchList',
+    name: 'searchList',
+    root: 'packageB',
+    subPackage: true,
+    config: {
+      navigationBarTitleText: '搜索结果',
+    }
+  },
 ]

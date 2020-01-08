@@ -225,6 +225,52 @@ const orderList = (params) => {
   return object
 }
 
+// 查询用户收货地址
+const addressList = (params) => {
+  let num = Random.integer(0, 15)
+  let list = []
+  let selected = Random.integer(0, num - 1)
+  for (let i = 0; i < num; i++) {
+    let addressObj = Random.county(true)
+    let o = addressObj.split(" ")
+    let obj = {
+      index: i + 1,
+      address: Random.cword(5, 10),
+      provinceCode: Random.integer(100, 999),
+      provinceName: o[0],
+      cityCode: Random.integer(100, 999),
+      cityName: o[1],
+      districtCode: Random.integer(100, 999),
+      districtName: o[2],
+      receiverName: Random.cname(),
+      receiverMphone: Random.integer(13000000000, 19999999999),
+      addressDes: addressObj + Random.cword(8, 20)
+    }
+    if (i == selected) {
+      obj.defaultFlag = 0
+    } else {
+      obj.defaultFlag = 1
+    }
+    console.log("默认地址：", selected, num, i, i == selected, obj.defaultFlag)
+    list.push(obj)
+  }
+  let object = {}
+  if (list && list.length) {
+    object = {
+      resCode: "00100000",
+      obj: list,
+      msg: ""
+    }
+  } else {
+    object = {
+      resCode: "00100005",
+      obj: "",
+      msg: "网络异常,请稍后再试"
+    }
+  }
+  return object
+}
+
 // mock拦截
 Mock.mock('/mock/home/banners', "POST", banners) // 轮播图
 Mock.mock('/mock/home/iconList', "POST", iconList) // icon列表
@@ -238,3 +284,8 @@ Mock.mock('/mock/cart/list', "POST", carts) // 查询购物车信息
 
 // 订单
 Mock.mock('/mock/order/queryOrdersByStatus', 'POST', orderList)
+
+// 收货地址
+Mock.mock('/mock/address/queryAddressList', 'POST', addressList) // 查询用户所有收货地址
+
+// 搜索

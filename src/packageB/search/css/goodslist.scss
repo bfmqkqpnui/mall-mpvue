@@ -1,0 +1,258 @@
+@charset "UTF-8";
+.common-pic {
+	overflow: hidden;
+	text-align: center;
+	img {
+		&.main-pic {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+		&.icon-label {
+			width: 40px;
+			height: 40px;
+			top: 0px;
+			left: 0px;
+		}
+	}
+}
+
+.pr {
+	position: relative;
+}
+
+.pb {
+	position: absolute;
+}
+// 商品列表相似信息
+.common-cont {
+	.common-inner{
+		p {
+			margin-bottom: 15px;
+			&:nth-child(1) {
+				@include clamp;
+				font-size: 14px;
+				color: #333333;
+			}
+			&:nth-child(2) {
+				@include ellipsis;
+				font-size: 12px;
+				color: #999;
+				span {
+					padding-right: 3px;
+				}
+			}
+		}
+		.tags span{
+			font-style: normal;
+			color: #FF4A4A;
+			padding: 0 2px;
+			font-size: 12px;
+			color: #FF4A4A;
+			text-align: center;
+			border: 1px solid #FFBDBD;
+			border-radius: 2px;
+		}
+		.common-labels {
+			margin-bottom: 6px;
+			font-size: 12px;
+			color: #FF6F6F;
+			span {
+				padding: 1px 2px;
+				border: 1px solid #FF6F6F;
+				border-radius: 2px;
+				margin-right: 2px;
+					&.bl {
+						padding: 0;
+						padding-right: 2px;
+					}
+				span {
+					&.bg {
+						background: #FF6F6F;
+						color: #fff;
+						border: 0;
+						padding: 1px 4px;
+					}
+				}
+			}
+			// em{
+			// 	background: #FFE9E9;
+			// 	color: #FF4A4A ;
+			// 	border: 0;
+			// 	padding: 1px 4px 0 0;
+			// 	border: 1px solid #FFE9E9;
+			// }
+			// i{
+			// 	background: #FF4A4A;
+			// 	color: #fff;
+			// 	border: 0;
+			// 	padding: 1px 4px;
+			// 	margin: 0 4px 0 0;
+			// }
+			.stone{
+				padding: 1px 4px;
+				border: 1px solid #FF4A4A;
+				background: #FF4A4A;
+				color: #fff;
+			}
+		}
+		.common-cart {
+			.price {
+				font-size: 16px;
+				color: #FF6F6F;
+				&.single-price {
+					margin-right: 20px;
+				}
+			}
+			.pl-zan {
+				font-size: 16px;
+				margin-top: 4px;
+				.common-icon {
+					width: 13px;
+					height: 13px;
+					margin-right: 4px;
+				}
+				.common-nums {
+					font-size: 12px;
+					color: #999999;
+				}
+				.pl {
+					margin-right: 13px;
+				}
+			}
+		}
+	}
+}
+
+// 预售中、已售完
+.good-msg {
+	width: 70px;
+	height: 70px;
+	background: rgba(0,0,0,.5);
+	top: 0;
+	border-radius: 50%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	color: #f7f4f4;
+	span {
+		display: inherit;
+		line-height: 70px;
+		text-align: center;
+		font-size: 12px;
+	}
+}
+.good-msg-browse {
+	padding: 0 4rpx;
+	height: 28rpx;
+	border: 1px solid #FFBDBD;
+	border-radius: 4rpx;
+	left: 0;
+	top: 0;
+	background: #fff;
+	font-size: 20rpx;
+	color: #FF4A4A;
+	line-height: 26rpx;
+}
+/* End */
+// 商品列表
+.good-container {
+	// 单列
+	.single-column {
+		width: 100%;
+		ul {
+			li {
+				background: #fff;
+				border-bottom: 1px solid #e7e7e7;
+				padding: 20px 10px 10px 18px;
+				.left-cont {
+					width: 115px;
+					margin-right: 10px;
+					.left-pic {
+						width: 115px;
+						height: 115px;
+						border-radius: 8rpx;
+						overflow: hidden;
+					}
+					.hots{
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background:linear-gradient(90deg,rgba(255,74,74,1) 0%,rgba(255,74,94,1) 100%);
+						border-radius:2rpx 2rpx 8rpx 8rpx;
+						opacity:0.9;
+						font-size: 24rpx;
+						color: #fff;
+						text-align: center;
+						width: 100%;
+						overflow: hidden;
+						text-overflow:ellipsis;
+						white-space: nowrap;
+					}
+					.slodout {
+						width: 80px;
+						height: 80px;
+						position: absolute;
+						left: 50%;
+						margin-left: -40px;
+						top: 50%;
+						margin-top: -40px;
+					}
+				}
+				.right-cont {
+					.right-inner {
+						.cart {
+							width: 30px;
+							height: 30px;
+							line-height: 30px;
+							border: 1px solid #e7e7e7;
+							border-radius: 50%;
+							text-align: center;
+							right: 0;
+							bottom: 0;
+							.cart-icon {
+								display: inline-block;
+								width: 15px;
+								height: 15px;
+								position: absolute;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								margin: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 底部
+.bottom-footer {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
+.infinite-layer {
+	button {
+		background: none;
+		font-size: 12px;
+		color: #cfcfcf;
+		&::after {
+			border: 0;
+		}
+	}
+}
+// 无结果
+.no-result {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -60rpx;
+	font-size: 32rpx;
+}

@@ -20,12 +20,14 @@
       </div>
     </div>
     <div class="confirm" @click="addAddress">+新建地址</div>
+    <mp_nav></mp_nav>
   </div>
 </template>
 
 <script>
 import api from '../../api/api'
 import utils from '../../utils'
+import nav from '../../components/nav/nav'
   export default {
     name: 'addresslist',
     data() {
@@ -66,6 +68,9 @@ import utils from '../../utils'
         utils.navigateTo("/packageB/address/address")
       }
     },
+    components: {
+      'mp_nav': nav
+    }
   }
 </script>
 

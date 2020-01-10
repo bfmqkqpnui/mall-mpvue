@@ -65,6 +65,37 @@ const iconList = params => {
   }
   return object
 }
+
+// 查询订单列表
+const guessList = (params) => {
+  let num = Random.integer(0, 25)
+  let list = []
+  for (let i = 0; i < num; i++) {
+    let obj = {
+      index: i + 1,
+      goodsSaleName: Random.cword(8, 30),
+      goodsImg: Random.image('150x150', Random.color()),
+      goodsPrice: Random.float(1, 999999, 2, 2),
+    }
+    list.push(obj)
+  }
+  let object = {}
+  if (list && list.length) {
+    object = {
+      resCode: "00100000",
+      obj: list,
+      msg: ""
+    }
+  } else {
+    object = {
+      resCode: "00100005",
+      obj: "",
+      msg: "网络异常,请稍后再试"
+    }
+  }
+  return object
+}
+
 // 分类菜单列表
 const categories = (params) => {
   let num = Random.integer(10, 25)
@@ -272,8 +303,10 @@ const addressList = (params) => {
 }
 
 // mock拦截
+// 首页
 Mock.mock('/mock/home/banners', "POST", banners) // 轮播图
 Mock.mock('/mock/home/iconList', "POST", iconList) // icon列表
+Mock.mock('/mock/home/queryGuessList', "POST", guessList) // icon列表
 
 // 分类
 Mock.mock('/mock/items/menus', "POST", categories) // 菜单列表

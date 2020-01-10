@@ -16,6 +16,10 @@ const api = {
   queryIcons: r => request.post('/home/iconList', r, {
     baseURL: baseUrlApi
   }),
+  // 猜你喜欢商品列表
+  queryGuessList: r => request.post('/home/queryGuessList', r, {
+    baseURL: baseUrlApi
+  }),
 
   // 查询分类菜单列表
   queryItemMenus: r => request.post('/items/menus', r, {
@@ -43,6 +47,8 @@ const api = {
   queryAddressList: r => request.post('/address/queryAddressList', r, {
     baseURL: baseUrlApi
   }),
+
+  
 }
 
 export default api

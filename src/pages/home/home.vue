@@ -19,7 +19,8 @@
         <div class="content" v-text="item.content" v-if="item.content"></div>
       </div>
     </div>
-
+    <!-- 猜你喜欢 -->
+    <mp_guess></mp_guess>
   </div>
 </template>
 
@@ -27,6 +28,7 @@
 import api from '../../api/api'
 import utils from '../../utils'
 import constant from '../../constant/config'
+import guess from '../../components/guess/guess'
   export default {
     name: 'home',
     data() {
@@ -73,6 +75,7 @@ import constant from '../../constant/config'
       }
     },
     components: {
+      'mp_guess': guess
     }
   }
 </script>

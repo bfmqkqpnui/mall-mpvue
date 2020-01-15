@@ -1,6 +1,6 @@
 <template>
 	<div class="guess" v-if="goodsList && goodsList.length">
-		<div class="title">猜你喜欢</div>
+		<div class="title" v-if="title">{{title}}</div>
 		<div class="item-list">
 			<ul>
 				<li v-for="(item, i) in goodsList" :key="i">
@@ -44,7 +44,8 @@ import utils from '../../utils'
 export default {
 	name: 'guess',
 	props: {
-		page: undefined
+		page: undefined,
+		title: ''
 	},
 	data () {
 		return {

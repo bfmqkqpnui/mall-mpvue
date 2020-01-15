@@ -20,7 +20,7 @@
       </div>
     </div>
     <!-- 猜你喜欢 -->
-    <mp_guess></mp_guess>
+    <mp_guess :title="title"></mp_guess>
   </div>
 </template>
 
@@ -34,7 +34,8 @@ import guess from '../../components/guess/guess'
     data() {
       return {
         bannerList: "",
-        iconList: ""
+        iconList: "",
+        title: '猜你喜欢'
       }
     },
     props: {},

@@ -85,6 +85,9 @@ import utils from '../../utils'
       },
       goSearchList(item) {
         console.log("去搜索列表", item)
+        if (item) {
+          utils.navigateTo("/pages/items/category")
+        }
       },
     },
   }

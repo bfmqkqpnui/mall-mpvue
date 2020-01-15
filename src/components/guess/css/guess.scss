@@ -17,12 +17,13 @@
     margin-top: 40rpx;
     ul {
       display: flex;
-      justify-content: space-around;
+      // justify-content: space-around;
       flex-wrap: wrap;
       li {
         width: 345rpx;
         height: 470rpx;
         margin-bottom: 10rpx;
+        margin-left: 6rpx;
         .good-img {
           width: 322rpx;
           height: 325rpx;

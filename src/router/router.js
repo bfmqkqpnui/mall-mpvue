@@ -95,4 +95,11 @@ module.exports = [
       navigationBarTitleText: '搜索结果',
     }
   },
+  {
+    path: 'pages/items/category',
+    name: 'category',
+    config: {
+      navigationBarTitleText: '类目结果',
+    }
+  },
 ]

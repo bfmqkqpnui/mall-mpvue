@@ -43,7 +43,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 # 全局安装
 npm i @shymean/mock-server -g
 # 快速启动mock服务器
-mock -p 9999 -f ./_mock.js
+mock -p 10086 -f ./mock.js
 ```
 # 参数说明
 ``` bash

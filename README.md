@@ -51,3 +51,17 @@ mock -p 10086 -f ./mock.js
 # file，mock模板文件路径，默认./_mock.js，简写 -f
 启动方法： https://blog.csdn.net/kabuda0311/article/details/81671073
 ```
+
+# Sol Weapp
+```
+https://sunnie1992.github.io/sol-weapp/#/README
+
+一、 营销组件
+  1. 大转盘
+  2. 红包雨
+  3. 九宫格翻牌
+  4. 老虎机
+二、 业务组件
+  1. tab滚动导航
+  2. 微信分享组件(转发好友/分享图)
+```
